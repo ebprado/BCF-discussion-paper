@@ -1,5 +1,5 @@
 # BCF-discussion-paper
-This repository contains R scripts to run the simulation results and to generate the plots of the discussion paper Bayesian Regression Tree Models for Causal Inference: Regularization, Confounding, and Heterogeneous Effects (Hanh et al, 2020).
+This repository contains R scripts to run the simulation results and to generate the plots of the discussion paper Bayesian Regression Tree Models for Causal Inference: Regularization, Confounding, and Heterogeneous Effects (Hahn et al, 2020).
 
 Basically, the files with prefix "Run_" run some algorithms on synthetic data generated according to the Section 6.1 of Hahn et al (2020). Below, we present a brief explanation about the scripts
  
