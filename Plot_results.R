@@ -17,9 +17,15 @@ load('1250MOTR_BART_Simulation_results.RData'); res5 = consolidated_results
 load('2250MOTR_BART_Simulation_results.RData'); res6 = consolidated_results
 load('3250MOTR_BART_Simulation_results.RData'); res7 = consolidated_results
 load('4250MOTR_BART_Simulation_results.RData'); res8 = consolidated_results
-# load('1BCF_BMA_Simulation_results.RData'); res9 = consolidated_results
-# load('2BCF_BMA_Simulation_results.RData'); res10 = consolidated_results
+load('SAFE_Simulation_results.RData'); res9 = consolidated_results
+load('1BCF_BMA_Simulation_results.RData'); res10 = consolidated_results
+load('2BCF_BMA_Simulation_results.RData'); res11 = consolidated_results
+
+# To generate the plots in the paper
 db = as.data.frame(rbind(res1, res2, res3, res4, res5, res6, res7, res8))
+
+# To generate the plots including Safe-BART, safe-BCF and BCF-BMA, which were not included in the paper
+# db = as.data.frame(rbind(res1, res2, res3, res4, res5, res6, res7, res8, res9, res10, res11))
 
 # Organise some details ----------------------------------------------------------------------------------------
 
@@ -33,8 +39,8 @@ db$rep = as.numeric(as.character(db$rep))
 db$p = factor(db$p, levels = c('5', '50', '100', '500'))
 db$tau_str = factor(db$tau_str, levels = c('heterogeneous', 'homogeneous'), labels = c(expression(paste(tau, '(x) =  heterogeneous')), expression(paste(tau, '(x) = homogeneous'))))
 db$mu_str = factor(db$mu_str, levels = c('linear', 'nonlinear'), labels = c(expression(paste(mu, '(x) = linear')), expression(paste(mu, '(x) = nonlinear'))))
-db$Algorithm = factor(db$Algorithm, levels=c('Causal Forests','BCF', 'ps-BART-BMA', 'ps-DART', 'ps-BART', 'ps-MOTR-BART'), labels=c('Causal RF', 'BCF', 'ps-BART-BMA', 'ps-DART', 'ps-BART', 'ps-MOTR BART'))
-# db$Algorithm = factor(db$Algorithm, levels=c('Causal Forests','BCF', 'BCF-BMA', 'ps-BART-BMA', 'ps-DART', 'ps-BART', 'ps-MOTR-BART'), labels=c('Causal RF', 'BCF', 'BCF-BMA', 'ps-BART-BMA', 'ps-DART', 'ps-BART', 'ps-MOTR BART'))
+# db$Algorithm = factor(db$Algorithm, levels=c('Causal Forests','BCF', 'ps-BART-BMA', 'ps-DART', 'ps-BART', 'ps-MOTR-BART'), labels=c('Causal RF', 'BCF', 'ps-BART-BMA', 'ps-DART', 'ps-BART', 'ps-MOTR BART'))
+db$Algorithm = factor(db$Algorithm, levels=c('Causal Forests','BCF', 'safe-BCF', 'safe-BART', 'BCF-BMA', 'ps-BART-BMA', 'ps-DART', 'ps-BART', 'ps-MOTR-BART'), labels=c('Causal RF', 'BCF', 'safe-BCF', 'safe-BART', 'BCF-BMA', 'ps-BART-BMA', 'ps-DART', 'ps-BART', 'ps-MOTR BART'))
 
 # Plot results ------------------------------------------------------------------------------------------
 plott = function(sample_size, treat_effect, estimand, order){
