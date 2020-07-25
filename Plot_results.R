@@ -24,7 +24,7 @@ load('2BCF_BMA_Simulation_results.RData'); res11 = consolidated_results
 # To generate the plots in the paper
 db = as.data.frame(rbind(res1, res2, res3, res4, res5, res6, res7, res8))
 
-# To generate the plots including Safe-BART, safe-BCF and BCF-BMA, which were not included in the paper
+# To generate the plots including safe-BART, safe-BCF and BCF-BMA, which were not included in the paper
 # db = as.data.frame(rbind(res1, res2, res3, res4, res5, res6, res7, res8, res9, res10, res11))
 
 # Organise some details ----------------------------------------------------------------------------------------
