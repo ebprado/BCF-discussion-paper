@@ -7,8 +7,8 @@ Basically, the files with prefix "Run_" run one or more algorithms on synthetic 
 
 2 - Run_BART_BMA: it runs BART-BMA (Hernández et al, 2018);
 
-3 - Run_BART_DART_CRF: it runs BART (Chipman et al, 2010), DART (Linero, 2018) and Causal Random Forests (Athey, arxiv 2018); 
+3 - Run_BART_DART_CRF: it runs BART (Chipman et al, 2010), DART (Linero, 2018) and Causal Random Forests (Wager and Athey, 2018); 
 
 4 - Run_BCF_BMA: it runs the Bayesian Causal Forest with Bayesian Model Averaging. This can be viewed as the BCF approach to BART-BMA. We didn't present the results related to BCF-BMA as it didn't differ much from BART-BMA; 
 
-5 - Run_MOTR_BART: it runs BART with Model Trees (Prado et al, arxiv 2020).
+5 - Run_MOTR_BART: it runs BART with Model Trees (Prado et al, 2021).
